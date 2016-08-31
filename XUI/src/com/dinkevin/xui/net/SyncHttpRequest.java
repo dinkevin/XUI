@@ -10,9 +10,11 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.Iterator;
+
 import com.dinkevin.xui.net.exception.HttpRequestException;
 import com.dinkevin.xui.util.Debuger;
 import com.dinkevin.xui.util.FileUtil;
+
 import android.text.TextUtils;
 
 /**
@@ -157,7 +159,7 @@ public class SyncHttpRequest {
 			}
 		}
 
-		FileUtil.closeInputStream(input);
+		FileUtil.closeStream(input);
 		return result;
 	}
 
@@ -272,7 +274,7 @@ public class SyncHttpRequest {
 			}
 		}
 
-		FileUtil.closeInputStream(input);
+		FileUtil.closeStream(input);
 		return result;
 	}
 }

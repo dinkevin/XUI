@@ -38,16 +38,16 @@ public class FileUtil {
 				return false;
 			}
 			
-			return creatFile(path, true);
+			return recreate(path);
 		}
 		
-		return creatFile(path, true);
+		return recreate(path);
 	}
 	
 	/**
-	 * 重建文件夹或者文件，根据是否存在后缀来判断是否为文件路径
+	 * 重建文件夹或者文件，根据是否存在后缀来判断是否为文件路径，先删除后重建。
 	 * @param path 如果传入为目录则创建目录，如果传入为文件路径则创建文件
-	 * @return
+	 * @return true 表示重建成功，否则失败
 	 */
 	public static boolean recreate(String path){
 		FileUtil.delete(path);
@@ -70,14 +70,9 @@ public class FileUtil {
 	 * 创建文件
 	 * @param path
 	 * @param recreate true -> 如果存在则删除重建；false -> 如果存在则直接返回
-	 * @return true -> 文件创建成功;false -> 文件创建失败
 	 */
-	public static boolean creatFile(String path,boolean recreate){
+	public static boolean creatFile(String path){
 		File file = new File(path);
-		
-		if(recreate && file.exists()){
-			file.delete();
-		}
 		
 		if(!file.exists()){
 			try {
@@ -102,26 +97,13 @@ public class FileUtil {
 	
 	/**
 	 * 检测目标文件是否存在 
-	 * @param dir 目录
+	 * @param dirPath 目录
  	 * @param fileName 文件名称
 	 * @return true->存在；否则表示不存在
 	 */
-	public static boolean exist(String dir,String fileName){
-		File file = new File(dir,fileName);
+	public static boolean exist(String dirPath,String fileName){
+		File file = new File(dirPath,fileName);
 		return file.exists();
-	}
-	
-	/**
-	 * 删除指定文件
-	 * @param filePath
-	 * @return
-	 */
-	public static boolean deleteFile(String filePath){
-		File file = new File(filePath);
-		if(file.exists() && file.isFile()){
-			return file.delete();
-		}
-		return false;
 	}
 	
 	/**
@@ -172,7 +154,7 @@ public class FileUtil {
 	 * @return 已读数据长度
 	 */
 	public static int readFileData(String filePath,byte[] buffer,int skipCount){
-		InputStream input = openFileInput(filePath);
+		InputStream input = openFileInputStream(filePath);
 		if(input != null){
 			int count = -2;
 			try {
@@ -180,11 +162,11 @@ public class FileUtil {
 				count = input.read(buffer);
 			} catch (IOException e) {
 				Debuger.e("读取文件内容异常",e.getMessage());
-				closeInputStream(input);
+				closeStream(input);
 				return -1;
 			}
 			
-			closeInputStream(input);
+			closeStream(input);
 			if(count > -1){
 				byte[] data = new byte[count];
 				System.arraycopy(buffer, 0, data, 0, count);
@@ -196,42 +178,28 @@ public class FileUtil {
 	
 	/**
 	 * 打开文件输入流
-	 * @param path
-	 * @return
+	 * @param filePath
+	 * @return 文件输入流或者null（如果文件不存在或者打开输入流失败）
 	 */
-	public static InputStream openFileInput(String path){
-		File file = new File(path);
+	public static InputStream openFileInputStream(String filePath){
+		File file = new File(filePath);
 		if(file.exists() && file.canRead()){
 			try {
 				FileInputStream input = new FileInputStream(file);
 				return input;
 			} catch (FileNotFoundException e) {
-				Debuger.e("打开文件输入流失败",path);
+				Debuger.e("打开文件输入流失败",filePath);
 			}
 		}
 		return null;
 	}
 	
-	/**
-	 * 关闭文件输入流
-	 * @param input
-	 */
-	public static void closeInputStream(InputStream input){
-		if(input != null){
-			try {
-				input.close();
-			} catch (IOException e) {
-				Debuger.e("关闭文件输入流失败",e.getMessage());
-			}
-		}
-	}
-	
 	/** 
 	 * 打开文件输出流
 	 * @param path
-	 * @return
+	 * @return 文件输出流或者null（如果文件不存在或者打开输出流失败）
 	 */
-	public static OutputStream openFileOutput(String path){
+	public static OutputStream openFileOutputStream(String path){
 		File file = new File(path);
 		if(file.exists() && file.canWrite()){
 			try {
@@ -242,20 +210,6 @@ public class FileUtil {
 			}
 		}
 		return null;
-	}
-	
-	/**
-	 * 关闭文件输出流
-	 * @param output
-	 */
-	public static void closeOutputStream(OutputStream output){
-		if(output != null){
-			try {
-				output.close();
-			} catch (IOException e) {
-				Debuger.e("关闭文件输出流失败",e.getMessage());
-			}
-		}
 	}
 	
 	/**
@@ -304,16 +258,16 @@ public class FileUtil {
 			return false;
 		}
 		
-		OutputStream output = openFileOutput(filePath);
+		OutputStream output = openFileOutputStream(filePath);
 		if(output != null){
 			try {
 				output.write(data, offset, count);
 			} catch (IOException e) {
 				Debuger.e("写入文件失败",filePath);
-				closeOutputStream(output);
+				closeStream(output);
 				return false;
 			}
-			closeOutputStream(output);
+			closeStream(output);
 			return true;
 		}
 		return false;
@@ -340,7 +294,7 @@ public class FileUtil {
 	 */
 	public static long writeToFile(InputStream input,String filePath){
 		if(create(filePath)){
-			OutputStream output = openFileOutput(filePath);
+			OutputStream output = openFileOutputStream(filePath);
 			if(null != output){
 				byte[] buffer = new byte[1024];
 				int read = 0;

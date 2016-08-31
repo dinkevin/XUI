@@ -56,7 +56,7 @@ public class DataStorage extends Storage {
 		
 		if(data == null) return false;
 		String localFilePath = storageRootPath + uid + SUFFIX;
-		FileUtil.deleteFile(localFilePath);
+		FileUtil.delete(localFilePath);
 		try {
 			byte[] encodeData = DESCoder.encrypt(data, encoderKey);
 			return FileUtil.writeToFile(encodeData, 0, encodeData.length, localFilePath);

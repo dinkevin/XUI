@@ -128,7 +128,7 @@ public class DownloadTask{
 				}
 				
 				// 文件输出流
-				OutputStream output = FileUtil.openFileOutput(cachePath);
+				OutputStream output = FileUtil.openFileOutputStream(cachePath);
 				if(null == output){
 					String message = "打开本地缓存文件流失败";
 					Debuger.e(message,cachePath);
@@ -181,8 +181,8 @@ public class DownloadTask{
 						listener.onDownloadError(DownloadTask.this,ERROR_CODE_READ_INPUT_STREAM, message);
 					}
 					
-					FileUtil.closeInputStream(input);
-					FileUtil.closeOutputStream(output);
+					FileUtil.closeStream(input);
+					FileUtil.closeStream(output);
 				}
 			}
 		};
