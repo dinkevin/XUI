@@ -5,8 +5,8 @@ import java.io.File;
 import com.dinkevin.xui.storage.DownloadTask.DownloadListener;
 import com.dinkevin.xui.util.Debuger;
 import com.dinkevin.xui.util.FileUtil;
+import com.dinkevin.xui.util.MD5Util;
 import com.dinkevin.xui.util.StringUtil;
-import com.dinkevin.xui.util.XUIUtil;
 
 import android.os.Environment;
 
@@ -71,7 +71,7 @@ public abstract class Storage{
 	 */
 	public static String parseUrlToStorageId(String url){
 		if(StringUtil.isEmpty(url)) return null;
-		return XUIUtil.md5Encode(url);
+		return MD5Util.calculate(url);
 	}
 	
 	/**

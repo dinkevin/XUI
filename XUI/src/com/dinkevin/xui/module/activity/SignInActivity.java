@@ -3,8 +3,8 @@ package com.dinkevin.xui.module.activity;
 import com.dinkevin.xui.R;
 import com.dinkevin.xui.activity.AbstractActivity;
 import com.dinkevin.xui.module.CommonConstant;
+import com.dinkevin.xui.util.RegularUtil;
 import com.dinkevin.xui.util.ToastUtil;
-import com.dinkevin.xui.util.XUIUtil;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -91,7 +91,7 @@ public class SignInActivity extends AbstractActivity{
 			return false;
 		}
 		
-		if(!XUIUtil.isMobileNumber(phoneNumber)){
+		if(!RegularUtil.isMobileNumber(phoneNumber)){
 			ToastUtil.showShort("手机号码格式不对!");
 			return false;
 		}

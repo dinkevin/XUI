@@ -3,8 +3,8 @@ package com.dinkevin.xui.module.activity;
 import com.dinkevin.xui.R;
 import com.dinkevin.xui.activity.AbstractActivity;
 import com.dinkevin.xui.module.CommonConstant;
+import com.dinkevin.xui.util.RegularUtil;
 import com.dinkevin.xui.util.ToastUtil;
-import com.dinkevin.xui.util.XUIUtil;
 import com.dinkevin.xui.view.VerificationCode;
 import com.dinkevin.xui.view.VerificationCode.OnCountListener;
 
@@ -96,7 +96,7 @@ public class ResetPasswordActivity extends AbstractActivity implements OnCountLi
 			return false;
 		}
 		
-		if(!XUIUtil.isMobileNumber(phoneNumber)){
+		if(!RegularUtil.isMobileNumber(phoneNumber)){
 			ToastUtil.showShort("手机号格式不正确！");
 			return false;
 		}
