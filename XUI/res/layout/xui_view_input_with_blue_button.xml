@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 输入框带有蓝色按钮布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/xui_input_layout_height"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xui_input_edit_height" >
+        
+        <com.dinkevin.xui.view.VerificationCode 
+            android:id="@+id/xui_btn_input_right"
+            style="@style/xui_default_view"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:textColor="@color/xui_blue"
+            android:textSize="@dimen/xui_mark"/>
+
+        <EditText
+            android:id="@+id/xui_edt_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:hint="@null" 
+            android:singleLine="true"
+            android:textColorHint="@color/xui_hint"
+            android:layout_toLeftOf="@id/xui_btn_input_right"/>
+    </RelativeLayout>
+
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        layout="@layout/xui_view_line" />
+
+</LinearLayout>

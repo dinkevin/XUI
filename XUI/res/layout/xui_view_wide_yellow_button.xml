@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 宽的黄色按钮 -->
+<Button xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/xui_yellow_button_height"
+    android:orientation="vertical"
+    android:background="@drawable/xui_wide_yellow_button"
+    android:textColor="@android:color/white"
+    android:gravity="center"/>

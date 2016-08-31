@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 通用的 ListView 列表控件 -->
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xui_list_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:divider="#cccccc"
+    android:dividerHeight="1dp"
+    android:cacheColorHint="@android:color/transparent"
+    android:scrollingCache="true"
+    android:scrollbars="none"/>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 通用的页面标题标题栏，左边一个返回图片，右边一个图片-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/view_head"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/xui_header_height"
+    android:background="@color/xui_head_background">
+    
+    <ImageView 
+        android:id="@+id/img_head_left"
+        android:contentDescription="@string/xui_content_description"
+        style="@style/xui_header_menu_icon"
+        android:src="@drawable/xui_action_back_white"/>
+    
+    <include 
+        layout="@layout/xui_view_head_title"/>
+    
+    <ImageView 
+        android:id="@+id/img_head_right"
+        android:contentDescription="@string/xui_content_description"
+        style="@style/xui_header_menu_icon"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

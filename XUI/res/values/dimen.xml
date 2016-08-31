@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="xui_header_height">46dp</dimen>
+    <dimen name="xui_header_title">20sp</dimen>
+    <dimen name="xui_header_button_length">40dp</dimen>
+    <dimen name="xui_view_padding">10dp</dimen>
+    <dimen name="xui_text_padding">2dp</dimen>
+    <dimen name="xui_text_padding_2X">4dp</dimen>
+    <dimen name="xui_content">15sp</dimen>
+    <dimen name="xui_mark">11sp</dimen>
+    <dimen name="xui_input_layout_height">40dp</dimen>
+    <dimen name="xui_input_edit_height">39dp</dimen>
+    <dimen name="xui_yellow_button_height">50dp</dimen>
+    <dimen name="xui_yellow_button_margin_top">50dp</dimen>
+    <dimen name="xui_auto_list_view_footer_height">50dp</dimen>
+    
+    <dimen name="xui_header_menu_icon_length">46dp</dimen>
+    <dimen name="xui_header_menu_padding">8dp</dimen>
+    <dimen name="xui_fillet_button_radius_l">10dp</dimen>
+    <dimen name="xui_popup_menu_radius">10dp</dimen>
+</resources>

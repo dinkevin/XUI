@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:background="@drawable/xui_comment_list_view_background">
+
+    <LinearLayout
+        android:id="@+id/xui_layout_like"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <com.dinkevin.xui.view.AutoLinearLayout
+            android:id="@+id/xui_layout_head_icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:layout_margin="5dp"/>
+
+        <View
+            android:id="@+id/xui_layout_like_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/xui_list_view_line" />
+    </LinearLayout>
+
+    <com.dinkevin.xui.view.WrapperListView
+        android:id="@+id/xui_comment_list_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/xui_list_view_line"
+        android:dividerHeight="1dp" 
+        android:scrollbars="none"
+        android:layout_marginBottom="5dp"
+        android:focusable="false"/>
+
+</LinearLayout>

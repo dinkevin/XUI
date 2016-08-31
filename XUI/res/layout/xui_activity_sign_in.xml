@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 登录页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/xui_default_layout"
+    android:orientation="vertical" >
+
+    <include 
+        android:id="@+id/view_head"
+        layout="@layout/xui_view_head" />
+
+    <include
+         android:id="@+id/xui_phone_number"
+         layout="@layout/xui_view_input" />
+
+    <include 
+        android:id="@+id/xui_password"
+        layout="@layout/xui_view_input_with_blue_button" />
+
+    <include
+        android:id="@+id/xui_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/xui_view_padding"
+        android:layout_marginRight="@dimen/xui_view_padding"
+        android:layout_marginTop="@dimen/xui_yellow_button_margin_top"
+        layout="@layout/xui_view_wide_yellow_button" />
+
+</LinearLayout>

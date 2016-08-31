@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@color/xui_white">
+
+    <RelativeLayout
+        android:id="@+id/view_message_input"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_alignParentBottom="true" 
+        android:padding="5dp">
+        
+        <ImageView 
+            android:id="@+id/img_voice"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:contentDescription="@string/xui_content_description"
+            android:src="@drawable/xui_icon_voice_normal"/>
+        
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/lsv_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/view_message_input"
+        android:background="@android:color/transparent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="0dp"
+        android:listSelector="@android:color/transparent" >
+    </ListView>
+
+</RelativeLayout>

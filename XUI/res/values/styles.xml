@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 默认 View 样式 -->
+    <style name="xui_default_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="xui_comment_list_view_item_text_view" parent="@style/xui_default_view">
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <!-- 标题左右按钮样式 -->
+    <style name="xui_header_side_button">
+        <item name="android:layout_width">@dimen/xui_header_button_length</item>
+        <item name="android:layout_height">@dimen/xui_header_button_length</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!-- 默认的容器布局 -->
+    <style name="xui_default_layout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/xui_layout</item>
+    </style>
+
+    <!-- 控件样式，宽铺满父容器，高包裹 -->
+    <style name="xui_layout_match_wrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@android:color/white</item>
+    </style>
+
+    <style name="customProgressBar" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:indeterminateDrawable">@drawable/xui_custom_progress_bar</item>
+        <item name="android:layout_width">25dp</item>
+        <item name="android:layout_height">25dp</item>
+        <item name="android:padding">2dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="auto_list_footer_text_view" parent="@style/xui_default_view">
+        <item name="android:textSize">15sp</item>
+        <item name="android:padding">5dp</item>
+    </style>
+
+    <style name="wrap_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <!-- 标题栏 text_view 样式 -->
+    <style name="header_text_view" parent="@style/wrap_view">
+        <item name="android:textColor">@color/xui_white</item>
+        <item name="android:textSize">@dimen/xui_header_title</item>
+    </style>
+
+    <!-- 标题栏菜单图片 -->
+    <style name="xui_header_menu_icon">
+        <item name="android:layout_width">@dimen/xui_header_menu_icon_length</item>
+        <item name="android:layout_height">@dimen/xui_header_menu_icon_length</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/xui_header_menu_background</item>
+        <item name="android:padding">13dp</item>
+    </style>
+    
+    <!-- 标题栏菜单按钮 -->
+    <style name="xui_header_menu_button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/xui_header_menu_icon_length</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:padding">@dimen/xui_header_menu_padding</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:background">@drawable/xui_header_menu_background</item>
+    </style>
+    
+    <style name="animation_left_fade">  
+        <item name="android:windowEnterAnimation">@anim/in_left_to_right</item>  
+        <item name="android:windowExitAnimation">@anim/out_right_to_left</item>  
+    </style>  
+      
+    <style name="animation_right_fade">  
+        <item name="android:windowEnterAnimation">@anim/in_right_to_left</item>  
+        <item name="android:windowExitAnimation">@anim/out_left_to_right</item>  
+    </style>  
+      
+    <style name="animation_bottom_fade">  
+        <item name="android:windowEnterAnimation">@anim/in_bottom_to_top</item>  
+        <item name="android:windowExitAnimation">@anim/out_top_to_buttom</item>  
+    </style>  
+    
+    <style name="picture_menu_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:textColor">@color/xui_text_gray_46</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+</resources>

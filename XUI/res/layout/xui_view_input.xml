@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 输入框布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/xui_input_layout_height"
+    android:orientation="vertical" 
+    android:background="@android:color/white">
+    
+    <EditText 
+        android:id="@+id/xui_edt_input"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xui_input_edit_height"
+        android:gravity="center_vertical"
+        android:hint="@null" 
+        android:singleLine="true"
+        android:textColorHint="@color/xui_hint"/>
+
+    <include 
+        layout="@layout/xui_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+</LinearLayout>

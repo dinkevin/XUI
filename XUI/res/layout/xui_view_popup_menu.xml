@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    android:padding="15dp">
+
+    <Button
+        android:id="@+id/btn_picture_menu_gallery"
+        style="@style/picture_menu_button"
+        android:text="@string/xui_picture_menu_gallery" 
+        android:background="@drawable/fillet_picture_menu_background"/>
+
+    <Button
+        android:id="@+id/btn_picture_menu_camera"
+        style="@style/picture_menu_button"
+        android:text="@string/xui_picture_menu_camera" 
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/fillet_picture_menu_background"/>
+
+    <Button
+        android:id="@+id/btn_picture_menu_cancel"
+        style="@style/picture_menu_button"
+        android:text="@string/xui_picture_menu_cancel" 
+        android:background="@drawable/fillet_picture_menu_background"/>
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 底部圆角 白色背景 灰色边框 长方体 -->  
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">  
+    <!-- 使用两张叠加的图方式实现底部圆角 -->
+    <item>  
+        <shape>  
+            <solid android:color="@color/xui_text_gray_f6" />  
+            <corners android:topLeftRadius="@dimen/xui_popup_menu_radius" android:topRightRadius="@dimen/xui_popup_menu_radius" android:bottomLeftRadius="@dimen/xui_popup_menu_radius" android:bottomRightRadius="@dimen/xui_popup_menu_radius"/> 
+        </shape> 
+    </item>  
+    <item android:bottom="15dp" android:left="-1dp" android:right="-1dp">  
+        <shape>  
+            <solid android:color="@color/xui_text_gray_f6"/>
+        </shape>
+    </item>  
+</layer-list>

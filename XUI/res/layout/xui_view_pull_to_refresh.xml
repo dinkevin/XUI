@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 滑动刷新列表页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <com.dinkevin.xui.view.PullRefreshListView
+        android:id="@+id/lsv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="#cccccc"
+        android:dividerHeight="1dp"
+        android:scrollbars="none"
+        android:scrollingCache="true" >
+    </com.dinkevin.xui.view.PullRefreshListView>
+
+</LinearLayout>

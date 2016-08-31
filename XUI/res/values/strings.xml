@@ -1,0 +1,31 @@
+<resources>
+
+    <string name="xui_content_description"></string>
+    <string name="xui_colon">：</string>
+    <string name="xui_feedback"> 回复</string>
+    <string name="xui_header_title_sign_in">账号登录</string>
+	<string name="xui_sign_in">登录</string>
+	<string name="xui_sign_up">注册</string>
+	<string name="xui_forget_password">忘记密码</string>
+	<string name="xui_input_phone_number_hint">请输入手机号</string>
+	<string name="xui_input_password_hint">密码</string>
+	<string name="xui_input_new_password_hint">请输入新密码</string>
+	<string name="xui_input_new_password_confirm_hint">确认新密码</string>
+	<string name="xui_input_verification_code_hint">验证码</string>
+	<string name="xui_request_verification_code">获取验证码</string>
+	<string name="xui_header_title_reset_password">修改密码</string>
+	<string name="xui_submit">提交</string>
+	<string name="xui_load_more">加载更多……</string>
+	<string name="xui_no_more">没有更多数据</string>
+	<string name="xui_more">更多</string>
+	<string name="xui_last_update_time">上次更新时间：</string>
+	<string name="xui_pull_to_refresh">下拉刷新</string>
+	<string name="xui_connect_failed">连接服务器失败！</string>
+
+	<string name="xui_picture_menu_gallery">从相册中选取</string>
+	<string name="xui_picture_menu_camera">拍照</string>
+	<string name="xui_picture_menu_cancel">取消</string>
+	<string name="xui_release_to_refresh">松开刷新</string>
+	<string name="xui_refreshing">刷新数据</string>
+	<string name="xui_image_load_error">图片加载失败！</string>
+</resources>

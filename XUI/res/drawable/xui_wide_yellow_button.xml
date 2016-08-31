@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- 黄色的宽按钮背景 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <item android:state_pressed="true">
+        <shape>
+            <corners android:radius="10dp" />
+            <solid android:color="@color/xui_yellow_active" />
+        </shape>
+    </item>
+    
+    <item>
+        <shape>
+            <corners android:radius="10dp" />
+            <solid android:color="@color/xui_yellow" />
+        </shape>
+    </item>
+    
+</selector>

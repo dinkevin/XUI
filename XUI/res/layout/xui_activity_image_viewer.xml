@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 图片查看器页面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/xui_text_black_4b">
+    
+    <include 
+        android:id="@+id/view_head"
+        layout="@layout/xui_view_head"/>
+    
+    <com.dinkevin.xui.view.LooperViewPager 
+        android:id="@+id/xui_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/xui_auto_list_view_footer_height"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical" 
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/xui_refreshing"
+                style="@style/customProgressBar" />
+
+            <TextView
+                android:id="@+id/xui_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" 
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/xui_last_update_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/xui_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_toLeftOf="@id/layout"
+            android:layout_marginRight="@dimen/xui_text_padding_2X"
+            android:contentDescription="@string/xui_content_description"
+            android:src="@drawable/pull_to_refresh_arrow" 
+            android:scaleType="centerInside"/>
+    </RelativeLayout>
+
+</LinearLayout>

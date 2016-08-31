@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <corners android:topLeftRadius="@dimen/xui_fillet_button_radius_l" android:topRightRadius="@dimen/xui_fillet_button_radius_l" android:bottomLeftRadius="@dimen/xui_fillet_button_radius_l" android:bottomRightRadius="@dimen/xui_fillet_button_radius_l"/>
+            <solid android:color="@color/xui_picture_menu_button_pressed"/>
+        </shape>
+    </item>
+    
+    <item >
+        <shape android:shape="rectangle">
+            <corners android:topLeftRadius="@dimen/xui_fillet_button_radius_l" android:topRightRadius="@dimen/xui_fillet_button_radius_l" android:bottomLeftRadius="@dimen/xui_fillet_button_radius_l" android:bottomRightRadius="@dimen/xui_fillet_button_radius_l"/>
+            <solid android:color="@color/xui_picture_menu_button"/>
+        </shape>
+    </item>
+
+</selector>

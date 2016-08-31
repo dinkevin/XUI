@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/xui_like_icon"
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:padding="3dp"
+    android:layout_gravity="center_vertical"
+    android:contentDescription="@string/xui_content_description"
+    android:src="@drawable/xui_like_icon" 
+    android:scaleType="fitCenter"/>

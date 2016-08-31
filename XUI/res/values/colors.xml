@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="xui_nick_name_blue">#336699</color>
+    <color name="xui_list_view_line">#c8ccce</color>
+    
+    <color name="xui_head_background">#fe7471</color>
+    <color name="xui_head_title">#ffffff</color>
+    <color name="xui_layout">#ffffff</color>
+    <color name="xui_line">#d8d8d8</color>
+    <color name="xui_list_item_pressed">#d4d4d4</color>
+    
+    <color name="xui_yellow_active">#fd971d</color>
+    <color name="xui_yellow">#f0ad4d</color>
+    
+    <color name="xui_blue">#2a00ff</color>
+    <color name="xui_blue_deep">#91a7b9</color>
+    
+    <color name="xui_hint">#b0b0b0</color>
+    
+    <color name="xui_text_blue_81ccea">#81ccea</color>
+    
+    <color name="xui_text_gray_46">#464646</color>
+    <color name="xui_text_gray_8d">#8d8d8d</color>
+    <color name="xui_text_gray_d6">#d6d6d6</color>
+    <color name="xui_text_gray_f4">#f4f4f4</color>
+    <color name="xui_text_gray_f6">#f6f6f6</color>
+    <color name="xui_text_green_75cf43">#75cf43</color>
+    <color name="xui_text_orange_ffc13d">#ffc13d</color>
+    <color name="xui_text_red_f48368">#f48368</color>
+    <color name="xui_text_black_4b">#4b4b4b</color>
+    <color name="xui_text_black_3d">#3d3d3d</color>
+    
+     <!-- 文字白色 -->
+    <color name="xui_white">#ffffff</color>
+    
+    <!-- 标题按钮正常显示颜色 -->
+    <color name="xui_head_menu_text">#ffdf92</color>
+    
+    <!-- 标题按钮按压颜色 -->
+    <color name="xui_head_menu_icon_pressed">#e0e0e0</color>
+    <color name="xui_picture_menu_button_pressed">#a5a5a5</color>
+    <color name="xui_picture_menu_button">#ffffff</color>
+</resources>

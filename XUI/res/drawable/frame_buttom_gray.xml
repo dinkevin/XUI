@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 圆角 popupwindow 头部背景 -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:bottom="1dp"
+        android:left="-2dp"
+        android:right="-2dp"
+        android:top="-2dp">
+        <selector>
+            <item android:state_pressed="true">
+                <color android:color="@color/xui_list_item_pressed" />
+            </item>
+            <item>
+                <shape android:shape="rectangle" >
+                    <stroke
+                        android:width="0.5dp"
+                        android:color="@color/xui_line" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+
+</layer-list>
