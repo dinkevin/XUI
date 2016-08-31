@@ -128,7 +128,7 @@ public class FeedImageAdapter extends AbstractAdapter<String> {
 	}
 
 	@Override
-	protected View getItemView(int position) {
+	protected View createItemView(int position) {
 		return null;
 	}
 }

@@ -82,7 +82,7 @@ public abstract class AbstractAdapter<T> extends BaseAdapter{
 	 * @param position 列表索引
 	 * @return Item 对应的 View
 	 */
-	protected abstract View getItemView(int position);
+	protected abstract View createItemView(int position);
 	
 	/**
 	 * 载入指定的布局 View
@@ -98,7 +98,7 @@ public abstract class AbstractAdapter<T> extends BaseAdapter{
 		view = viewCache.get(position);
 		if(view == null)
 		{
-			view = getItemView(position);
+			view = createItemView(position);
 			viewCache.put(position, view);
 		}
 		return view;

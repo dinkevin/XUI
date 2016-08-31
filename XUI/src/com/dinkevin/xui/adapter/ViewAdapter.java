@@ -33,11 +33,23 @@ public abstract class ViewAdapter<T, V extends ViewHolder<T>> extends AbstractAd
 
 	@SuppressWarnings("unchecked")
 	@Override
-	protected View getItemView(int position) {
+	protected View createItemView(int position) {
 		View view = createViewHolder().inflate(context, null, false);
 		V holder = (V) view.getTag();
 		holder.set(getItem(position));
 		return view;
+	}
+	
+	/**
+	 * 获取列表 Item 对应的 ViewHolder
+	 * @param position
+	 * @return ViewHolder 的实现类
+	 */
+	@SuppressWarnings("unchecked")
+	public V getViewHolder(int position){
+		View view = getView(position, null, null);
+		if(null == view) return null;
+		return (V)view.getTag();
 	}
 
 	protected abstract V createViewHolder();

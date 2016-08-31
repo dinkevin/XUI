@@ -19,7 +19,7 @@ public class CacheFileAdapter extends AbstractAdapter<File>{
 	}
 
 	@Override
-	protected View getItemView(int position) {
+	protected View createItemView(int position) {
 		View view = inflateLayout(R.layout.xui_item_text_view);
 		ViewFinder finder = new ViewFinder(view);
 		TextView txt_title = finder.findViewById(R.id.txt_item_title);
