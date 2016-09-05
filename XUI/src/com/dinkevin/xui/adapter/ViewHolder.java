@@ -12,7 +12,7 @@ import android.view.ViewGroup;
  * @author chengpengfei
  * @param <T>
  */
-public abstract class ViewHolder<T> implements ViewParser {
+public abstract class ViewHolder<T> implements IViewParser {
 
 	protected View rootView;
 	protected LayoutInflater layoutInflater;

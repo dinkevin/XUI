@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 /**
  * 视图解析器,用户加载、解析xml中的布局
  */
-public interface ViewParser {
+public interface IViewParser {
 	
 	/**
 	 * 载入布局文件

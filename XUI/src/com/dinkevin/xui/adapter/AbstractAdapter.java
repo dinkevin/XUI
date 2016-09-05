@@ -93,6 +93,17 @@ public abstract class AbstractAdapter<T> extends BaseAdapter{
 		return inflater.inflate(layoutResId, null);
 	}
 	
+	/**
+	 * 删除指定位置的 Item View 对象
+	 * @param position Item 索引
+	 */
+	public void removeView(int position){
+		if(position < viewCache.size()){
+			viewCache.remove(position);
+			notifyDataSetChanged();  // 通知列表刷新
+		}
+	}
+	
 	@Override
 	public View getView(int position, View view, ViewGroup parent){
 		view = viewCache.get(position);

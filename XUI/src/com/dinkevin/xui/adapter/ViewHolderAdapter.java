@@ -10,15 +10,15 @@ import android.view.View;
  * 
  * @author chengpengfei
  * @param <T> 对象类
- * @param <V> 对象类对应的显示类
+ * @param <V> 对象类对应的 ViewHolder 显示类
  */
-public abstract class ViewAdapter<T, V extends ViewHolder<T>> extends AbstractAdapter<T> {
+public abstract class ViewHolderAdapter<T, V extends ViewHolder<T>> extends AbstractAdapter<T> {
 
 	/**
 	 * 构造器
 	 * @param context
 	 */
-	public ViewAdapter(Context context) {
+	public ViewHolderAdapter(Context context) {
 		super(context);
 	}
 	
@@ -27,7 +27,7 @@ public abstract class ViewAdapter<T, V extends ViewHolder<T>> extends AbstractAd
 	 * @param context
 	 * @param data
 	 */
-	public ViewAdapter(Context context,List<T> data) {
+	public ViewHolderAdapter(Context context,List<T> data) {
 		super(context,data);
 	}
 
@@ -42,7 +42,7 @@ public abstract class ViewAdapter<T, V extends ViewHolder<T>> extends AbstractAd
 	
 	/**
 	 * 获取列表 Item 对应的 ViewHolder
-	 * @param position
+	 * @param position Item 索引
 	 * @return ViewHolder 的实现类
 	 */
 	@SuppressWarnings("unchecked")

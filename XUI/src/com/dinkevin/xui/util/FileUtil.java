@@ -56,11 +56,11 @@ public class FileUtil {
 	
 	/**
 	 * 创建目录，如果目录已经存在则直接返回
-	 * @param path
+	 * @param dirPath
 	 * @return true -> 目录创建成功、目录已经存在;false -> 目录创建失败
 	 */
-	public static boolean createDir(String path){
-		File file = new File(path);
+	public static boolean createDir(String dirPath){
+		File file = new File(dirPath);
 		if(!file.exists())
 			return file.mkdirs();
 		return true;
@@ -68,17 +68,17 @@ public class FileUtil {
 	
 	/**
 	 * 创建文件
-	 * @param path
+	 * @param filePath
 	 * @param recreate true -> 如果存在则删除重建；false -> 如果存在则直接返回
 	 */
-	public static boolean creatFile(String path){
-		File file = new File(path);
+	public static boolean creatFile(String filePath){
+		File file = new File(filePath);
 		
 		if(!file.exists()){
 			try {
 				return file.createNewFile();
 			} catch (IOException e) {
-				Debuger.e("创建文件失败 "+path);
+				Debuger.e("创建文件失败 "+filePath);
 				return false;
 			}
 		}
@@ -134,14 +134,14 @@ public class FileUtil {
 	
 	/**
 	 * 获取文件后缀名称
-	 * @param path 文件路径
+	 * @param filePath 文件路径
 	 * @return
 	 */
-	public static String getFileSuffix(String path){
-		if(TextUtils.isEmpty(path)) return null;
-		int index = path.lastIndexOf(".");
-		if(index > 0 && index + 1 < path.length() - 1){
-			return path.substring(index + 1);
+	public static String getFileSuffix(String filePath){
+		if(TextUtils.isEmpty(filePath)) return null;
+		int index = filePath.lastIndexOf(".");
+		if(index > 0 && index + 1 < filePath.length() - 1){
+			return filePath.substring(index + 1);
 		}
 		return null;
 	}
@@ -196,17 +196,17 @@ public class FileUtil {
 	
 	/** 
 	 * 打开文件输出流
-	 * @param path
+	 * @param filePath
 	 * @return 文件输出流或者null（如果文件不存在或者打开输出流失败）
 	 */
-	public static OutputStream openFileOutputStream(String path){
-		File file = new File(path);
+	public static OutputStream openFileOutputStream(String filePath){
+		File file = new File(filePath);
 		if(file.exists() && file.canWrite()){
 			try {
 				FileOutputStream output = new FileOutputStream(file);
 				return output;
 			} catch (FileNotFoundException e) {
-				Debuger.e("打开文件输出流失败",path);
+				Debuger.e("打开文件输出流失败",filePath);
 			}
 		}
 		return null;
@@ -346,12 +346,12 @@ public class FileUtil {
 	
 	/**
 	 * 获取指定目录下文件的总大小
-	 * @param dirName
+	 * @param dirPath
 	 * @return
 	 */
-	public static long getDirFileLength(String dirName){
+	public static long getDirFileLength(String dirPath){
 		long size = 0;
-		File file = new File(dirName);
+		File file = new File(dirPath);
 		if(file.isDirectory())
 		{
 			File[] subFiles = file.listFiles();

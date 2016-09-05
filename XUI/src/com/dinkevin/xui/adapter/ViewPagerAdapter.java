@@ -7,7 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 /**
- * XUILooperViewPager对应的数据源
+ * PagerAdapter 实现类
  * @author chengpengfei
  */
 public class ViewPagerAdapter extends PagerAdapter{
