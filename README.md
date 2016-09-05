@@ -17,7 +17,7 @@ XUI 为集功能、界面模块库，其中封装了 HTTP 网络请求、JSON �
 2. ViewPagerAdapter -> android.support.v4.view.PagerAdapter 实现类
 		说明：与android.support.v4.view.ViewPager 类配合使用，使用者直接调用即可。
 
-3. ViewAdapter -> View 数据源基类
+3. ViewHolderAdapter -> View 数据源基类
 		说明：基于 AbstractAdapter 专门对于界面显示优化一个 Adapter，此类需要配合 ViewHolder 的实现类使用，具体 Item 对应的
 			View 界面更新由 ViewHolder 来控制，这样可以将数据源与具体的界面显示分离，易于项目的维护与调试。
 
