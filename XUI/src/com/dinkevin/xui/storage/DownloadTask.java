@@ -3,9 +3,10 @@ package com.dinkevin.xui.storage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
+
 import com.dinkevin.xui.util.Debuger;
 import com.dinkevin.xui.util.DecimalUtil;
 import com.dinkevin.xui.util.FileUtil;
@@ -77,10 +78,9 @@ public class DownloadTask{
 			public void run() {
 				
 				// 打开网线连接
-				URLConnection connection = null;
+				HttpURLConnection connection = null;
 				try {
-					connection = url.openConnection();
-					connection.setConnectTimeout(10000);
+					connection = (HttpURLConnection)url.openConnection();
 				} 
 				catch (IOException e) {
 					
@@ -94,10 +94,10 @@ public class DownloadTask{
 				}
 				
 				// 添加浏览器头标识
-				connection.setRequestProperty("Accept", "*/*");
-				connection.setRequestProperty("Accept-Language", "zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4");
-				connection.setRequestProperty("Connection", "Keep-Alive");
-				connection.setRequestProperty("User-Agent", "Mozilla/5.0");
+//				connection.setRequestProperty("Accept", "*/*");
+//				connection.setRequestProperty("Accept-Language", "zh-CN,zh;q=0.8,en;q=0.6,zh-TW;q=0.4");
+//				connection.setRequestProperty("Connection", "Keep-Alive");
+//				connection.setRequestProperty("User-Agent", "Mozilla/5.0");
 				
 				// 打开网络输入流
 				InputStream input = null;
@@ -113,6 +113,8 @@ public class DownloadTask{
 					if(listener != null){
 						listener.onDownloadError(DownloadTask.this,ERROR_CODE_OPEN_INPUT_STREAM, message);
 					}
+					
+					connection.disconnect();
 					return;
 				}
 				
@@ -124,6 +126,7 @@ public class DownloadTask{
 					if(listener != null){
 						listener.onDownloadError(DownloadTask.this,ERROR_CODE_CREATE_CACHE_FILE, message);
 					}
+					connection.disconnect();
 					return;
 				}
 				
@@ -136,6 +139,7 @@ public class DownloadTask{
 					if(listener != null){
 						listener.onDownloadError(DownloadTask.this,ERROR_CODE_OPEN_CACHE_FILE_OUTPUT_STREAM, message);
 					}
+					connection.disconnect();
 					return;
 				}
 				
@@ -180,7 +184,8 @@ public class DownloadTask{
 					if(listener != null){
 						listener.onDownloadError(DownloadTask.this,ERROR_CODE_READ_INPUT_STREAM, message);
 					}
-					
+				} finally {
+					connection.disconnect();
 					FileUtil.closeStream(input);
 					FileUtil.closeStream(output);
 				}

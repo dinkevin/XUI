@@ -36,7 +36,12 @@ public class JSONUtil {
 		JsonArray Jarray = parser.parse(json).getAsJsonArray();
 		ArrayList<T> lcs = new ArrayList<T>();
 		for (JsonElement obj : Jarray) {
-			lcs.add((T) gson.fromJson(obj, type));
+			try{
+				T t = gson.fromJson(obj, type);
+				lcs.add(t);
+			}catch(Exception e){
+				Debuger.e("json parse to object list",e.getMessage());
+			}
 		}
 		return lcs;
 	}

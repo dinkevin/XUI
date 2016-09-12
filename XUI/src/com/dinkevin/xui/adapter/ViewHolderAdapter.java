@@ -39,18 +39,6 @@ public abstract class ViewHolderAdapter<T, V extends ViewHolder<T>> extends Abst
 		holder.set(getItem(position));
 		return view;
 	}
-	
-	/**
-	 * 获取列表 Item 对应的 ViewHolder
-	 * @param position Item 索引
-	 * @return ViewHolder 的实现类
-	 */
-	@SuppressWarnings("unchecked")
-	public V getViewHolder(int position){
-		View view = getView(position, null, null);
-		if(null == view) return null;
-		return (V)view.getTag();
-	}
 
 	protected abstract V createViewHolder();
 }

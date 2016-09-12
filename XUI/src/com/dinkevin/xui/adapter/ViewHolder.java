@@ -18,6 +18,7 @@ public abstract class ViewHolder<T> implements IViewParser {
 	protected LayoutInflater layoutInflater;
 	protected Context context;
 	protected ViewFinder viewFinder;
+	private T data;			// 当前 ViewHolder 绑定的数据
 
 	@Override
 	public final View inflate(Context context, ViewGroup parent, boolean attachToRoot) {
@@ -45,8 +46,24 @@ public abstract class ViewHolder<T> implements IViewParser {
 	protected abstract void initWidgets();
 	
 	/**
-	 * 填充数据
+	 * 刷新界面数据显示
+	 */
+	public abstract void invalid();
+	
+	/**
+	 * 给当前 ViewHolder 绑定数据
 	 * @param t
 	 */
-	public abstract void set(T t);
+	public void set(T t){
+		data = t;
+		invalid();
+	}
+	
+	/**
+	 * 获取当前 ViewHolder 绑定的数据
+	 * @return
+	 */
+	public T get(){
+		return data;
+	}
 }

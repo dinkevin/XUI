@@ -37,11 +37,9 @@ public class FileUtil {
 			if(!createDir(dir)){
 				return false;
 			}
-			
-			return recreate(path);
 		}
 		
-		return recreate(path);
+		return creatFile(path);
 	}
 	
 	/**
@@ -233,7 +231,6 @@ public class FileUtil {
 			file = new RandomAccessFile(f, "rw");
 			long seekPosition = file.length();
 			file.seek(seekPosition);
-			file.write(data);
 			file.write(data, byteOffset, byteCount);
 			file.close();
 			return true;

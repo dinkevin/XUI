@@ -103,6 +103,7 @@ public class ImageViewerActivity extends AbstractActivity{
 						});
 					}
 					
+					
 					@Override
 					public void onWriteComplete(final String localFilePath) {
 						

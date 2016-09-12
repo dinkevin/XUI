@@ -77,7 +77,7 @@ public abstract class AbstractAdapter<T> extends BaseAdapter{
 
 	/**
 	 * 生成 Item View，生成的 View 将被放入 viewCache 中，</br>
-	 * 如果重新生成 view，请调用 {@link #clearViewCache()}。</br>
+	 * 如果想要重生成全部的 view，请调用 {@link #clearViewCache()}。</br>
 	 * 载入布局文件可以调用 {@link #inflateLayout(int)}
 	 * @param position 列表索引
 	 * @return Item 对应的 View
@@ -94,20 +94,35 @@ public abstract class AbstractAdapter<T> extends BaseAdapter{
 	}
 	
 	/**
-	 * 删除指定位置的 Item View 对象
+	 * 获取 Item 绑定的 ViewHolder
 	 * @param position Item 索引
+	 * @return ViewHolder
 	 */
-	public void removeView(int position){
-		if(position < viewCache.size()){
-			viewCache.remove(position);
-			notifyDataSetChanged();  // 通知列表刷新
+	@SuppressWarnings("unchecked")
+	public <H extends ViewHolder<T>> H getViewHolder(int position){
+		View view = getView(position);
+		if(null != view){
+			Object tag = view.getTag();
+			if(null != tag && tag instanceof ViewHolder){
+				return (H)tag;
+			}
 		}
+		return null;
+	}
+	
+	/**
+	 * 获取指定位置 Item 对应的 View
+	 * @param position Item 索引
+	 * @return Item 对应的 View
+	 */
+	public View getView(int position){
+		return getView(position, null, null);
 	}
 	
 	@Override
-	public View getView(int position, View view, ViewGroup parent){
+	public synchronized View getView(int position, View view, ViewGroup parent){
 		view = viewCache.get(position);
-		if(view == null)
+		if(null == view)
 		{
 			view = createItemView(position);
 			viewCache.put(position, view);

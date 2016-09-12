@@ -100,4 +100,12 @@
         <item name="android:gravity">center</item>
     </style>
 
+    <!-- 默认的 ListView 样式 -->
+    <style name="xui_list_view">
+        <item name="android:scrollbars">vertical</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:cacheColorHint">@android:color/transparent</item>
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:divider">@color/xui_line</item>
+    </style>
 </resources>

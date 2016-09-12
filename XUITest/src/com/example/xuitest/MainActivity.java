@@ -13,7 +13,7 @@ import android.widget.Button;
 public class MainActivity extends AbstractActivity {
 	
 	Button btn_webView,btn_imageView,btn_dataStorage,btn_cacheStorage;
-
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,6 +37,8 @@ public class MainActivity extends AbstractActivity {
 		btn_imageView.setOnClickListener(this);
 		btn_dataStorage.setOnClickListener(this);
 		btn_cacheStorage.setOnClickListener(this);
+		
+		viewFinder.findViewById(R.id.btn_baidu_news).setOnClickListener(this);
 	}
 
 	@Override
@@ -67,11 +69,11 @@ public class MainActivity extends AbstractActivity {
 			
 		// 显示网络图片
 		case R.id.btn_image_view:
-			// 高清图片
+			// 网络图片
 			String[] urls = new String[]{
-					"http://bbs.static.coloros.com/data/attachment/forum/201503/09/182142idaabaxxa60bneqm.jpg",
-					"http://bbs.static.coloros.com/data/attachment/forum/201503/09/182144onxdxpu67d5prrzq.jpg",
-					"http://bbs.static.coloros.com/data/attachment/forum/201503/09/182147nq1ofq1t5t6q2o2f.jpg"
+					"http://tupian.enterdesk.com/2013/mxy/12/10/15/3.jpg",
+					"http://img.taopic.com/uploads/allimg/140326/235113-1403260I33562.jpg",
+					"http://www.wallcoo.com/nature/Summer_Fantasy_Landscapes/wallpapers/1680x1050/Summer_Fantasy_landscape_by_photo_manipulation_19315669.jpg"
 			};
 			intent = new Intent(this,ImageViewerActivity.class);
 			intent.putExtra(ImageViewerActivity.PICTURE_SOURCE, urls);
@@ -88,6 +90,11 @@ public class MainActivity extends AbstractActivity {
 		// 加解密数据
 		case R.id.btn_data_storage:
 			
+			break;
+			
+		// 新闻列表
+		case R.id.btn_baidu_news:
+			startActivity(new Intent(this,NewsActivity.class));
 			break;
 		}
 	}

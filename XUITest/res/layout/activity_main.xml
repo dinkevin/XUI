@@ -31,6 +31,11 @@
             android:id="@+id/btn_cache_storage"
             style="@style/button"
             android:text="缓存数据" />
+        
+         <Button
+            android:id="@+id/btn_baidu_news"
+            style="@style/button"
+            android:text="新闻列表" />
     </LinearLayout>
 
 </LinearLayout>

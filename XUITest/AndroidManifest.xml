@@ -31,6 +31,7 @@
         <activity android:name="com.dinkevin.xui.activity.WebViewActivity"/>
         <activity android:name="com.dinkevin.xui.activity.ImageViewerActivity"/>
         <activity android:name="com.example.xuitest.CacheStorageActivity"/>
+        <activity android:name="com.example.xuitest.NewsActivity"/>
     </application>
 
 </manifest>
