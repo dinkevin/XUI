@@ -6,6 +6,16 @@ XUI 是一个安卓开发辅助项目库，它将项目中常用的功能、模�
 XUI 为集功能、界面模块库，其中封装了 HTTP 网络请求、JSON 数据解析、文件操作等模块。写这个项目的初衷就是将我们平时写项目中的
 	重复性工作进行抽象封装，这样可以省去大量的时间，提高工作的效率。目前这个项目库仍在继续的完善中。
 
+### 效果图
+1. 新闻列表
+		
+		使用了 ViewHolderAdapter 作为 ListView 数据源的基类
+	![Alt text](https://github.com/dinkevin/XUI/blob/master/%E6%95%88%E6%9E%9C%E5%9B%BE/news_list.jpg?raw=true)
+	
+2. 新闻详细
+	
+		使用了 WebViewActivity 作为网页显示 Activity
+	![Alt text](https://raw.githubusercontent.com/dinkevin/XUI/master/%E6%95%88%E6%9E%9C%E5%9B%BE/news_detail.jpg)
 
 ### 版本说明
 ##### 时间：2016-08-26 V_1.0 初次版本
